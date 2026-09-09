@@ -1,0 +1,121 @@
+// ============================================================
+// Frontend TypeScript Types for Fitness Buddy
+// ============================================================
+
+export interface UserProfile {
+  id: string;
+  name: string;
+  age: number;
+  gender?: 'male' | 'female' | 'non-binary' | 'prefer-not-to-say';
+  height: number;
+  weight: number;
+  fitnessLevel: 'beginner' | 'intermediate' | 'advanced';
+  fitnessGoal: 'weight-loss' | 'muscle-gain' | 'general-fitness' | 'strength' | 'endurance';
+  availableTime: 10 | 20 | 30 | 45 | 60;
+  workoutLocation: 'home' | 'gym' | 'outdoor';
+  equipment: 'none' | 'dumbbells' | 'resistance-bands' | 'full-gym' | 'custom';
+  equipmentDetails?: string;
+  dietaryPreference: 'vegetarian' | 'non-vegetarian' | 'vegan' | 'other';
+  foodAllergies?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Exercise {
+  name: string;
+  duration?: string;
+  reps?: string;
+  sets: number;
+  rest: string;
+  difficulty: 'easy' | 'moderate' | 'hard';
+  instructions: string;
+  targetArea: string;
+  safetyTip: string;
+}
+
+export interface WorkoutPlan {
+  id: string;
+  title: string;
+  totalDuration: number;
+  difficulty: string;
+  goal: string;
+  location: string;
+  equipment: string;
+  warmup: Exercise[];
+  exercises: Exercise[];
+  cooldown: Exercise[];
+  generatedAt: string;
+}
+
+export interface WorkoutHistory {
+  id: string;
+  workoutId: string;
+  workoutTitle: string;
+  workoutType: string;
+  duration: number;
+  exercises: string[];
+  completedAt: string;
+  status: 'completed' | 'partial' | 'skipped';
+  notes?: string;
+}
+
+export interface HabitEntry {
+  id: string;
+  date: string;
+  workout: boolean;
+  water: boolean;
+  healthyMeal: boolean;
+  sleep: boolean;
+  activity: boolean;
+}
+
+export interface HabitItem {
+  id: keyof Omit<HabitEntry, 'id' | 'date'>;
+  label: string;
+  done: boolean;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: string;
+}
+
+export interface MealRecommendation {
+  id: string;
+  mealType: 'breakfast' | 'lunch' | 'dinner' | 'snack';
+  title: string;
+  ingredients: string[];
+  preparationSteps: string[];
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+  prepTime: string;
+  healthBenefits: string[];
+  generatedAt: string;
+}
+
+export interface Progress {
+  currentGoal: string;
+  todayProgress: number;
+  weeklyWorkouts: number;
+  habitStreak: number;
+  completedWorkouts: number;
+  progressPercentage: number;
+  weeklyHabitData: { day: string; completed: number; total: number }[];
+  workoutFrequency: { week: string; count: number }[];
+}
+
+export interface DailyPlan {
+  date: string;
+  workout: WorkoutPlan | null;
+  mealSuggestion: string;
+  waterReminder: string;
+  dailyTip: string;
+  motivationMessage: string;
+  habitChecklist: HabitItem[];
+  profileComplete: boolean;
+  userName: string | null;
+}

@@ -1,0 +1,28 @@
+# ============================================================
+# Fitness Buddy Backend — .gitignore
+# ============================================================
+
+# -- SECRETS (NEVER COMMIT) -----------------------------------
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+
+# -- RUNTIME DATA (auto-generated, contains user data) --------
+data/
+
+# -- COMPILED OUTPUT ------------------------------------------
+dist/
+
+# -- DEPENDENCIES ---------------------------------------------
+node_modules/
+
+# -- LOGS -----------------------------------------------------
+*.log
+logs/
+
+# -- OS -------------------------------------------------------
+.DS_Store
+Thumbs.db

@@ -1,0 +1,86 @@
+# ============================================================
+# Fitness Buddy — Root .gitignore
+# ============================================================
+
+# -- SENSITIVE / SECRETS -------------------------------------
+# NEVER commit .env files — they contain API keys and secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+
+# -- DEPENDENCIES ---------------------------------------------
+node_modules/
+**/node_modules/
+
+# -- BUILD OUTPUT ---------------------------------------------
+dist/
+**/dist/
+dist-ssr/
+build/
+**/build/
+.vite/
+
+# -- DATA FILES (local persistence — not for repo) ------------
+# These are auto-generated at runtime and contain user data
+backend/data/*.json
+
+# -- TYPESCRIPT COMPILED OUTPUT -------------------------------
+backend/dist/
+
+# -- LOGS -----------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# -- OS FILES -------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# -- EDITOR / IDE ---------------------------------------------
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+.project
+.classpath
+*.iml
+
+# -- PACKAGE MANAGER ------------------------------------------
+# Keep package-lock.json and package.json (important for reproducibility)
+# But ignore yarn/pnpm lock files if using npm
+yarn.lock
+pnpm-lock.yaml
+.yarn/
+.pnp.*
+
+# -- TESTING --------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+
+# -- MISC -----------------------------------------------------
+*.local
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
